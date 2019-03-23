@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset=utf-8 />
+ <title> Return first and last from a form </title> 
+</head>
+<body>
+ <form id="form1" onsubmit="getFormvalue()">
+ First name:<input type="text" id="a" name="fname" value="Yen"><br>
+ Last name:<input type="text" id="b" name="lname" value="Linh"><br>
+ <input type="submit" value="Submit">
+ </form>
+</body>
+</html>
+<script>
+  function getFormvalue(){
+    var fname = document.getElementsByName("fname")[0].value;  
+    var lname = document.getElementsByName("lname")[0].value;
+    var kq = "NO";
+    alert (fname + " " + lname);
+
+   }
+</script>

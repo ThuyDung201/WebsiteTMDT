@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset=utf-8 />
+ <title>Change the content of the cell1</title> 
+</head>
+<body>
+   <h1>Câu 7</h1>
+   <table id="cau7" border="1px solid">
+   </table>
+   <form>
+   <form action="">
+  S? dòng: <input type="text" id="row">
+  <br>
+  S? c?t: <input type="text" id="column">
+  <br>
+  <input type="button" value="T?o table" onclick="return createTable()">
+</form>
+
+<br>
+  
+<div id="container">
+
+</div>
+    <input type="button" onclick="createTable(3, 5)" value="Create the table">
+   </form>
+  <hr/>
+</body>
+<html>
+<script>
+  function createTable() {
+  var row = document.getElementById("row");
+  var column = document.getElementById("column");
+  
+  if (row.value.length == 0 || column.value.length == 0) {
+    alert("Vui lòng nh?p vào s? dòng và s? c?t");
+		return false;
+  } else if (isNaN(row.value) || isNaN(column.value)) {
+		alert("Vui lòng nh?p giá tr? s? cho s? dòng và s? c?t");
+		return false;
+  } else {
+		var container = document.getElementById("container");
+	
+		var countRow = parseInt(row.value);
+		var countColumn = parseInt(column.value);
+	
+		var tagTable = document.createElement("table");
+		tagTable.border = 1;
+	
+		for (var i = 0; i < countRow; i++) {
+      var tagRow = document.createElement("tr");
+      tagTable.appendChild(tagRow);
+	  		
+      for(var j = 0; j < countColumn; j++) {
+        var tagColumn = document.createElement("td");
+				var textNode = document.createTextNode(i + " - " + j);
+				tagColumn.appendChild(textNode);
+				tagRow.appendChild(tagColumn);
+      }
+		}
+	
+		container.appendChild(tagTable);
+	
+		return true;
+  }
+}
+ </script>
+ 
