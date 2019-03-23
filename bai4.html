@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset=utf-8 />
+ <title> JS DOM paragraph style </title> 
+</head>
+<body>
+ <p>
+    <a id="cau4" type="text/html" hreflang="en-us" rel="nofollow" target="_self" href="http://www.google.com">
+    Google Website</a>
+   </p>
+   <button onclick="getAttributes()">An doi gia tri</button>
+  <hr/>
+</body>
+<html>
+<script>
+function getAttributes(){
+    var href = document.getElementById("cau4").href;
+    var hreflang = document.getElementById("cau4").hreflang;
+    var rel = document.getElementById("cau4").rel;
+    var target = document.getElementById("cau4").target;
+    alert("href: "+href+"\nhreflang: "+hreflang+"\nrel: "+rel+"\ntarget: "+target);
+   }
+   
+ </script>
+ 
